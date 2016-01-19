@@ -1,3 +1,6 @@
+.Header
+    position: relative
+
 .Hero
     border-left: none
     border-right: none
@@ -36,17 +39,18 @@
 .Profile
     position: absolute
     left: 50%
-    top: 150px
+    top: 50%
     z-index: 11
-    +transform(translateX(-50%))
+    +transform(translateX(-50%) translateY(-50%))
 
     &-avatar
         margin: 0 auto
-        width: 192px
-        height: 192px
+        width: 128px
+        height: 128px
         border-radius: 50%
         overflow: hidden
         position: relative
+        border: 2px solid $color_terciario
         img
             height: 100%
             position: absolute
@@ -54,11 +58,35 @@
     &-name
         color: $color_principal
         font-family: $fuente_titulos
+        text-align: center
+        font-size: 1.5em
 
     &-title
         color: $color_secundario
         font-family: $fuente_titulos
         text-align: center
+
+    &-mantra
+        color: $color_terciario
+        font-family: $fuente_textos
+        font-size: 1em
+        text-align: center
+
+@media all and (min-width: 640px)
+    .Profile
+
+        &-avatar
+            width: 192px
+            height: 192px
+            img
+                right: -15px
+        &-name
+            font-size: 2em
+        &-mantra
+            font-size: 1.5em
+
+@media all and (min-width: 960px)
+    .Profile
 
 .ViewMore
     position: absolute
@@ -66,3 +94,107 @@
     left: 50%
     +transform(translateX(-50%))
     color: $color_secundario
+    cursor: pointer
+    z-index: 11
+    +transition(all 300ms ease-in-out)
+    &:hover
+        bottom: 0.5em
+
+.Social
+    position: absolute
+    left: 0.5em
+    top: 50%
+    z-index: 11
+    +transform(translateY(-50%))
+    &-list
+        margin: 0
+        padding: 0
+        list-style: none
+    &-link
+        color: $color_secundario
+        font-size: 2em
+        +transition(all 300ms ease-in-out)
+        &:hover
+            font-size: 2.3em
+
+.Section
+    min-height: 100%
+    min-height: 100vh
+    width: 100%
+    padding: 3em 3em 1em
+    +display(flex)
+    +flex-wrap(wrap)
+    +justify-content(space-between)
+
+    &-title
+        font-family: $fuente_titulos
+        font-size: 2em
+        text-align: center
+        width: 100%
+        margin: 0 0 0.5em
+
+    &-subtitle
+        font-family: $fuente_titulos
+        font-size: 1.5em
+        text-align: center
+        width: 100%
+        margin: 0
+
+
+
+.Education
+    background: $color_secundario
+
+    &-item
+        font-family: $fuente_textos
+        margin: 0.25em 0
+        width: 100%
+        text-align: center
+        text-decoration: none
+        color: $color_apoyo
+        border: 1px solid $color_terciario
+        border-radius: 0.5em
+        padding: 0.5em
+        &--badge
+            width: 64px
+            height: auto
+            margin: 0 auto
+            display: block
+        &--name
+            font-size: 0.75em
+            margin: 0.5em 0
+            width: 100%
+        &--formal
+            width: 100%
+            text-align: center
+            font-family: $fuente_textos
+            font-size: 1em
+            color: $color_apoyo
+
+    .Section
+        &-title
+            color: $color_apoyo
+        &-subtitle
+            color: $color_terciario
+
+@media all and (min-width: 640px)
+    .Education
+        &-item
+            width: 49%
+
+            &--badge
+                width: 96px
+            &--name
+                font-size: 1em
+
+@media all and (min-width: 960px)
+    .Education
+        &-item
+            &--badge
+                width: 128px
+
+.Skills
+    background: $color_terciario
+
+.Portfolio
+    background: $color_principal

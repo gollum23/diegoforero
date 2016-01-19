@@ -3,12 +3,13 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <title>Diego Forero</title>
     <link rel="stylesheet" href="{% static 'dist/css/styles.css' %}">
 </head>
 <body>
     <header class="Header">
-        <div class="Header-top"></div>
         <div class="Hero">
             <div class="Hero-wrapper">
                 <div class="Hero-filter"></div>
@@ -25,11 +26,51 @@
                 </div>
                 <h1 class="Profile-name">Diego Forero</h1>
                 <p class="Profile-title">Desarrollador Web</p>
+                <h2 class="Profile-mantra">"Me gusta aprender algo nuevo todos los días"</h2>
             </div>
             <div class="ViewMore"><i class="fa fa-2x fa-chevron-down"></i></div>
         </div>
+        <div class="Social">
+            <ul class="Social-list">
+                <li class="Social-item">
+                    <a class="Social-link" href="https://github.com/gollum23" target="_blank"><i class="fa fa-github"></i></a>
+                </li>
+                <li class="Social-item">
+                    <a class="Social-link" href="https://bitbucket.org/Gollum23/" target="_blank"><i class="fa fa-bitbucket"></i></a>
+                </li>
+                <li class="Social-item">
+                    <a class="Social-link" href="https://twitter.com/Gollum23" target="_blank"><i class="fa fa-twitter"></i></a>
+                </li>
+                <li class="Social-item">
+                    <a class="Social-link" href="https://plus.google.com/103586800621789174596" target="_blank"><i class="fa fa-google-plus"></i></a>
+                </li>
+            </ul>
+        </div>
     </header>
-    <section class="Wrapper"></section>
+    <section class="Education Section">
+        <h2 class="Section-title">Formación</h2>
+        <h3 class="Section-subtitle">Formal</h3>
+            <p class="Education-item--formal">Tecnología en Sistemas - 5 Semestre - UNAD (Actualmente)</p>
+        <h3 class="Section-subtitle">Online</h3>
+            <a href="https://platzi.com/backend/" target="_blank" class="Education-item">
+                <img class="Education-item--badge" src="{% static 'dist/img/golden_backend2x.png' %}" alt="">
+                <p class="Education-item--name">Carrera Backend Profesional - Platzi (2015)</p></a>
+            <a href="https://platzi.com/frontend/" target="_blank" class="Education-item">
+                <img class="Education-item--badge" src="{% static 'dist/img/golden_frontend2x.png' %}" alt="">
+                <p class="Education-item--name">Carrera Frontend Profesional - Platzi (2015)</p>
+            </a>
+            <a href="https://platzi.com/devops/" target="_blank" class="Education-item">
+                <img class="Education-item--badge" src="{% static 'dist/img/golden_servidores2x.png' %}" alt="">
+                <p class="Education-item--name">Carrera Administración de servidores y DevOps - Platzi (2015)</p>
+            </a>
+            <a href="https://platzi.com/base-de-datos/" target="_blank" class="Education-item">
+                <img class="Education-item--badge" src="{% static 'dist/img/golden_datos2x.png' %}" alt="">
+                <p class="Education-item--name">Carrera de Bases de Datos - Platzi (2015)</p>
+            </a>
+    </section>
+    <section class="Skills Section"></section>
+    <section class="Portfolio Section"></section>
+    <section class="Contact"></section>
     <footer class="Footer"></footer>
     <script src="{% static 'dist/js/libs/jquery-2.2.0.min.js' %}"></script>
     <script src="{% static 'dist/js/main-compiled.js' %}"></script>
