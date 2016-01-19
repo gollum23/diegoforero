@@ -1,0 +1,61 @@
+.Hero
+    border-left: none
+    border-right: none
+    position: relative
+
+    &-wrapper
+        position: relative
+        bottom: 0
+        left: 0
+        height: 100%
+        height: 100vh
+        width: 100%
+        overflow: hidden
+        background: black
+
+    &-filter
+        z-index: 10
+        position: absolute
+        background: rgba(black, 0.4)
+        width: 100%
+        height: 100%
+        height: 100vh
+
+    &-video
+        position: absolute
+        bottom: 0
+        z-index: 0
+
+    &-video.full-width
+        width: 100%
+
+.no-video .Hero-wrapper .Hero-video,
+.touch .Hero-wrapper .Hero-video
+    display: none
+
+.Profile
+    position: absolute
+    left: 50%
+    top: 150px
+    z-index: 11
+    +transform(translateX(-50%))
+
+    &-avatar
+        margin: 0 auto
+        width: 192px
+        height: 192px
+        border-radius: 50%
+        overflow: hidden
+        position: relative
+        img
+            height: 100%
+            position: absolute
+            right: -15px
+    &-name
+        color: $color_principal
+        font-family: $fuente_titulos
+
+    &-title
+        color: $color_secundario
+        font-family: $fuente_titulos
+        text-align: center
