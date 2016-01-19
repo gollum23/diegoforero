@@ -1,0 +1,31 @@
+{
+  "name": "diegoforero",
+  "version": "1.0.0",
+  "description": "Personal website",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gollum23/diegoforero.git"
+  },
+  "keywords": [
+    "website",
+    "js",
+    "django",
+    "python",
+    "sass",
+    "html5",
+    "personal"
+  ],
+  "author": "Diego Forero",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gollum23/diegoforero/issues"
+  },
+  "homepage": "https://github.com/gollum23/diegoforero#readme",
+  "devDependencies": {
+    "babel-preset-es2015": "^6.3.13"
+  }
+}
