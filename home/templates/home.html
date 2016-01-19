@@ -1,10 +1,36 @@
+{% load static from staticfiles %}
 <!doctype html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <title>Diego Forero</title>
+    <link rel="stylesheet" href="{% static 'dist/css/styles.css' %}">
 </head>
 <body>
-
+    <header class="Header">
+        <div class="Header-top"></div>
+        <div class="Hero">
+            <div class="Hero-wrapper">
+                <div class="Hero-filter"></div>
+                <video autoplay loop class="Hero-video full-width" poster="https://s3-us-west-2.amazonaws.com/coverr/poster/Hello-World.jpg">
+                    <source src="https://s3-us-west-2.amazonaws.com/coverr/mp4/Hello-World.mp4" type="video/mp4">
+                    "Su navegador no soporta la etiqueta video. Por favor actualice su navegador web."
+                    <source src="https://s3-us-west-2.amazonaws.com/coverr/mp4/Hello-World.mp4" type="video/webm">
+                    "Su navegador no soporta la etiqueta video. Por favor actualice su navegador web."
+                </video>
+            </div>
+            <div class="Profile">
+                <div class="Profile-avatar">
+                    <img src="{% static 'dist/img/diego.jpg' %}" alt="">
+                </div>
+                <h1 class="Profile-name">Diego Forero</h1>
+                <p class="Profile-title">Desarrollador Web</p>
+            </div>
+        </div>
+    </header>
+    <section class="Wrapper"></section>
+    <footer class="Footer"></footer>
+    <script src="{% static 'dist/js/libs/jquery-2.2.0.min.js' %}"></script>
+    <script src="{% static 'dist/js/main-compiled.js' %}"></script>
 </body>
 </html>
