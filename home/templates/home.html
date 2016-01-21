@@ -72,74 +72,24 @@
     <section class="Portfolio Section">
         <h2 class="Section-title">Portafolio</h2>
         <section class="Portfolio-list">
+            {% for p in portfolio %}
+                <article class="PortfolioItem">
+                    <img class="PortfolioItem-img" src="{{ MEDIA_URL }}{{ p.img }}" alt="{{ p.name }}">
+                    <div class="PortfolioItem-info">
+                        <h3 class="PortfolioItem-title">{{ p.name }}</h3>
+                        <p class="PortfolioItem-text"><span>Año:</span> {{ p.year }} {% if p.status == 'n' %}- no terminado{% elif p.status == 'd' %}- en desarrollo{% endif %}</p>
+                        <p class="PortfolioItem-text"><span>Stack:</span> {{ p.stack }}</p>
+                        <p class="PortfolioItem-text"><span>Responsive:</span> {{ p.responsive|yesno:"Si,No" }}</p>
+                        {% if p.url %}
+                            <p class="PortfolioItem-text"><span>Url: </span><a href="{{ p.url }}" target="_blank">{{ p.url }}</a></p>
+                        {% endif %}
+                        {% if p.repository %}
+                            <p class="PortfolioItem-text"><span>Repositorio:</span> <a href="{{ p.repository }}" target="_blank">{{ p.repository }}</a></p>
+                        {% endif %}
 
-            <article class="PortfolioItem">
-                <img class="PortfolioItem-img" src="{% static 'dist/img/portfolio/comunacuerdo.png' %}" alt="">
-                <div class="PortfolioItem-info">
-                    <h3 class="PortfolioItem-title">Común acuerdo</h3>
-                    <p class="PortfolioItem-text"><span>Año:</span> 2015 - en desarrollo</p>
-                    <p class="PortfolioItem-text"><span>Stack:</span> Django, HTML5, CSS3, JS, jQuery</p>
-                    <p class="PortfolioItem-text"><span>Responsive:</span> Si</p>
-                    <p class="PortfolioItem-text"><span>Url: </span><a href="http://comunacuerdo.co" target="_blank">http://comunacuerdo.co</a></p>
-                </div>
-            </article>
-
-            <article class="PortfolioItem">
-                <img class="PortfolioItem-img" src="{% static 'dist/img/portfolio/comproagro.png' %}" alt="">
-                <div class="PortfolioItem-info">
-                    <h3 class="PortfolioItem-title">Comproagro - no publicado</h3>
-                    <p class="PortfolioItem-text"><span>Año:</span> 2015 - no terminado</p>
-                    <p class="PortfolioItem-text"><span>Stack:</span> Django, HTML5, CSS3, JS, jQuery</p>
-                    <p class="PortfolioItem-text"><span>Responsive:</span> No</p>
-                    <p class="PortfolioItem-text"><span>Url: </span><a href="https://bitbucket.org/Gollum23/comproagro-django" target="_blank">Repositorio</a></p>
-                </div>
-            </article>
-
-            <article class="PortfolioItem">
-                <img class="PortfolioItem-img" src="{% static 'dist/img/portfolio/iesweb.png' %}" alt="">
-                <div class="PortfolioItem-info">
-                    <h3 class="PortfolioItem-title">Iesweb - Inteligencia en seguros</h3>
-                    <p class="PortfolioItem-text"><span>Año:</span> 2014 - en desarrollo</p>
-                    <p class="PortfolioItem-text"><span>Stack:</span> Django, HTML5, CSS3, JS, jQuery</p>
-                    <p class="PortfolioItem-text"><span>Responsive:</span> Si</p>
-                    <p class="PortfolioItem-text"><span>Url: </span><a href="http://app.iesweb.co" target="_blank">http://app.iesweb.co</a></p>
-                </div>
-            </article>
-
-            <article class="PortfolioItem">
-                <img class="PortfolioItem-img" src="{% static 'dist/img/portfolio/spe.png' %}" alt="">
-                <div class="PortfolioItem-info">
-                    <h3 class="PortfolioItem-title">Caracterización Sociolaboral SPE</h3>
-                    <p class="PortfolioItem-text"><span>Año:</span> 2014</p>
-                    <p class="PortfolioItem-text"><span>Stack:</span> Django, HTML5, CSS3, JS, jQuery</p>
-                    <p class="PortfolioItem-text"><span>Responsive:</span> No</p>
-                    <p class="PortfolioItem-text"><span>Url: </span><a href="http://spe2.viva.org.co" target="_blank">http://spe2.viva.org.co</a></p>
-                </div>
-            </article>
-
-
-
-            <article class="PortfolioItem">
-                <img class="PortfolioItem-img" src="{% static 'dist/img/portfolio/natura.png' %}" alt="">
-                <div class="PortfolioItem-info">
-                    <h3 class="PortfolioItem-title">Plataforma natura</h3>
-                    <p class="PortfolioItem-text"><span>Año:</span> 2013</p>
-                    <p class="PortfolioItem-text"><span>Stack:</span> Django, HTML5, CSS3, JS, jQuery</p>
-                    <p class="PortfolioItem-text"><span>Responsive:</span> No</p>
-                    <p class="PortfolioItem-text"><span>Url: </span><a href="http://natura.corpoeducacion.org.co" target="_blank">http://natura.corpoeducacion.org.co</a></p>
-                </div>
-            </article>
-
-            <article class="PortfolioItem">
-                <img class="PortfolioItem-img" src="{% static 'dist/img/portfolio/torgale.png' %}" alt="">
-                <div class="PortfolioItem-info">
-                    <h3 class="PortfolioItem-title">Inmobiliaria Torgale</h3>
-                    <p class="PortfolioItem-text"><span>Año:</span> 2011</p>
-                    <p class="PortfolioItem-text"><span>Stack:</span> Django, HTML5, CSS3, JS, jQuery</p>
-                    <p class="PortfolioItem-text"><span>Responsive:</span> Si</p>
-                    <p class="PortfolioItem-text"><span>Url: </span><a href="http://torgale.com.co" target="_blank">http://torgale.com.co</a></p>
-                </div>
-            </article>
+                    </div>
+                </article>
+            {% endfor %}
         </section>
 
     </section>
