@@ -1,5 +1,6 @@
 (() => {
     "use strict";
+    /* Video Cover */
     scaleVideoContainer();
 
     initBannerVideoSize('.Hero-wrapper .Hero-filter');
@@ -54,5 +55,15 @@
 
         });
     }
+    /* End Video Cover */
+
+    /* View more link */
+        $('.ViewMore').on('click', function() {
+            console.log('Click me....')
+            $(document.body).animate({
+                'scrollTop': $('.Education').offset().top
+            }, 1000)
+        })
+    /* End View more link */
 
 })();

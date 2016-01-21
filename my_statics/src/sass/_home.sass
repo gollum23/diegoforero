@@ -121,7 +121,7 @@
     min-height: 100%
     min-height: 100vh
     width: 100%
-    padding: 3em 3em 1em
+
     +display(flex)
     +flex-wrap(wrap)
     +justify-content(space-between)
@@ -147,13 +147,13 @@
 
     &-item
         font-family: $fuente_textos
-        margin: 0.25em 0
+        margin: 0.5em 0
         width: 100%
         text-align: center
         text-decoration: none
         color: $color_apoyo
-        border: 1px solid $color_terciario
-        border-radius: 0.5em
+        border-bottom: 4px solid $color_terciario
+        background-color: rgba($color_principal, 0.2)
         padding: 0.5em
         &--badge
             width: 64px
@@ -171,6 +171,8 @@
             font-size: 1em
             color: $color_apoyo
 
+    &.Section
+        padding: 3em 3em 1em
     .Section
         &-title
             color: $color_apoyo
@@ -193,8 +195,42 @@
             &--badge
                 width: 128px
 
-.Skills
-    background: $color_terciario
-
 .Portfolio
-    background: $color_principal
+    background: $color_terciario
+    &.Section
+        padding: 3em 0 1em
+    .Section
+        &-title
+            color: $color_secundario
+
+    &-list
+        +display(flex)
+        +flex-wrap(wrap)
+        +justify-content(space-around)
+
+    &Item
+        background: rgba(white, 0.2)
+        padding: 1em
+        margin: 0.5em
+        width: 95%
+        border-bottom: 4px solid $color_secundario
+        &-img
+            width: 100%
+            border-radius: 4px
+        &-title
+            font-family: $fuente_titulos
+        &-text
+            font-family: $fuente_textos
+            font-size: 0.75em
+            span
+                font-weight: bold
+
+@media all and (min-width: 610px)
+    .Portfolio
+        &Item
+            width: 47%
+
+@media all and (min-width: 960px)
+    .Portfolio
+        &Item
+            width: 31%
