@@ -19,8 +19,8 @@ source /usr/local/bin/virtualenvwrapper.sh
 workon diegoforero
 export DJANGO_SETTINGS_MODULE=$DJANGO_SETTINGS_MODULE
 export SECRET_KEY_DIEGOFORERO=""
-export DB_USER=""
-export DB_PASS=""
+export DATABASE_USER=""
+export DATABASE_PASS=""
 export DB_DIEGOFORERO=""
 export PYTHONPATH=$DJANGODIR:$PYTHONPATH
 
