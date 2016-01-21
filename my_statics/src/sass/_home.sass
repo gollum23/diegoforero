@@ -234,3 +234,18 @@
     .Portfolio
         &Item
             width: 31%
+
+.Footer
+    background: $color_apoyo
+    color: $color_secundario
+    border-bottom: 2px solid $color_principal
+    border-top: 2px solid $color_principal
+    &-top,
+    &-bottom
+
+        padding: 1em
+    &-top
+        +display(flex)
+        +justify-content(space-around)
+    &-bottom
+        text-align: center
