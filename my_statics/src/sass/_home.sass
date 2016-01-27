@@ -84,6 +84,7 @@
             font-size: 2em
         &-mantra
             font-size: 1.5em
+            max-width: 380px
 
 @media all and (min-width: 960px)
     .Profile
@@ -240,12 +241,26 @@
     color: $color_secundario
     border-bottom: 2px solid $color_principal
     border-top: 2px solid $color_principal
-    &-top,
-    &-bottom
+    padding: 1em 3em
+    font-family: $fuente_textos
+    +display(flex)
+    +justify-content(space-around)
+    &-column
+        width: 33.3%
+        &--center
+            text-align: center
 
-        padding: 1em
-    &-top
-        +display(flex)
-        +justify-content(space-around)
-    &-bottom
-        text-align: center
+        &--left
+            text-align: left
+            +align-self(flex-end)
+        &--right
+            text-align: right
+            ul
+                margin: 0
+                padding: 0
+            li
+                list-style: none
+            a
+                color: $color_secundario
+                font-size: 1.5em
+                text-decoration: none
