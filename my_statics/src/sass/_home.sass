@@ -243,11 +243,12 @@
     color: $color_secundario
     border-bottom: 2px solid $color_principal
     border-top: 2px solid $color_principal
-    padding: 1em 3em
+    padding: 3em
     position: relative
     font-family: $fuente_textos
     +display(flex)
     +justify-content(space-around)
+    +flex-wrap(wrap)
     &-bg
         position: absolute
         width: 100%
@@ -256,26 +257,47 @@
         left: 0
         right: 0
         bottom: 0
-        background: rgba(black, 0.4)
+        background: rgba(black, 0.6)
         z-index: 1
     &-column
-        width: 33.3%
         position: relative
         z-index: 2
-        &--center
-            text-align: center
 
         &--left
-            text-align: left
-            +align-self(flex-end)
+            text-align: center
+            +align-self(center)
+            +order(2)
+            +flex-grow(1)
+            padding: 2em 0 0
         &--right
-            text-align: right
+            text-align: center
+            +flex-grow(1)
+            +order(1)
             ul
                 margin: 0
                 padding: 0
             li
                 list-style: none
+                display: inline-block
+                padding: 0 1em
+
+
             a
                 color: $color_secundario
                 font-size: 1.5em
                 text-decoration: none
+
+@media all and (min-width: 969px)
+    .Footer
+        &-column
+            width: auto
+            &--left
+                +order(1)
+                +flex-grow(0)
+                text-align: left
+                padding: 0
+            &--right
+                text-align: right
+                li
+                    &:not(:last-child)
+                        border-right: 1px solid $color_terciario
