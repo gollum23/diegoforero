@@ -1,0 +1,33 @@
+version: '3'
+services:
+  diegoforero:
+    image: mantis/diegoforero-2020
+    volumes:
+      - ../../:/app/
+    ports:
+      - "8000:8000"
+    container_name: diegoforero
+    environment:
+      - TERM=xterm
+    depends_on:
+      - diegoforero-postgresql
+    networks:
+      - mantis
+  diegoforero-postgresql:
+    image: postgres:11.6
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=diegoforero
+      - POSTGRES_PASSWORD=diegoforero
+      - POSTGRES_DB=diegoforero
+    container_name: diegoforero-postgresql
+    networks:
+      mantis:
+        aliases:
+          - diegoforero-postgresql
+    volumes:
+      - ../../.data/diegoforero-postgres:/var/lib/postgresql/data
+networks:
+   mantis:
+     external: true
